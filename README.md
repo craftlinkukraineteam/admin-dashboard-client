@@ -28,6 +28,7 @@ npm run dev
 ```
 
 ### Cтруктура проєкту
+```properties
 ├── frontend/
 ├──── src/
 │   ├──── app/                  # Redux store
@@ -53,6 +54,7 @@ npm run dev
 ├── tsconfig.json
 ├── prettier.config.js
 └── .eslintrc.config.js
+```
 
 ### Встановлення залежностей
 ```bash
