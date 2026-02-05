@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Administration Panel Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Невеликий фронтенд‑застосунок, створений на React.js, який відповідає за інтерфейс панелі адміністрування.  
+Застосунок взаємодіє з бекенд‑мікросервісом (Spring Boot) через REST API та використовує JWT (JSON Web Token) для аутентифікації.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Запуск
+Запуск у JetBrains WebStorm через консоль командою:
+```properties
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Використані технології
+- React.js 18;
+- TypeScript;
+- React Router;
+- Vite;
+- Redux Toolkit (RTK Query);
+- Axios (для HTTP‑запитів);
+- JWT (JSON Web Token);
+- Material UI;
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Логіка роботи
+Клієнтський сервіс взаємодіє з серверним сервісом через такі ендпоінти:
+```properties
+- POST /auth/register — реєстрація нового користувача
+- POST /auth/login — авторизація користувача та отримання JWT токена
+- GET /auth/profile — отримання профілю користувача (з токеном у заголовку)
 ```
+
+### Cтруктура проєкту
+├── frontend/
+├──── src/
+│   ├──── app/                  # Redux store
+│   │   └── store.ts
+│   ├──── features/
+│   │   ├── auth/               # Авторизація та реєстрація
+│   │   │   ├── authSlice.ts
+│   │   │   ├── authApi.ts      # RTK Query для /login, /register
+│   │   │   ├── LoginPage.tsx
+│   │   │   └── RegisterPage.tsx
+│   │   └── dashboard/          # Панель адміністратора
+│   │       └── DashboardPage.tsx
+│   ├──── components/           # Загальні компоненти
+│   │   └── Navbar.tsx
+│   ├────── routes/             # React Router маршрути
+│   │   └── AppRoutes.tsx
+│   ├────── utils/              # Хелпери, токен, guard
+│   │   └── authGuard.tsx
+│   ├── main.tsx
+│   └── App.tsx
+├── index.html
+├── vite.config.ts
+├── tsconfig.json
+├── prettier.config.js
+└── .eslintrc.config.js
+
+### Встановлення залежностей
+```bash
+npm install
+```
+
+
