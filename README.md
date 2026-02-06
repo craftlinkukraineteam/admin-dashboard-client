@@ -64,6 +64,14 @@
 npm run dev
 ```
 
+## Оновлення всіх залежностей npm до останніх версій
+Запуск у IDE JetBrains WebStorm через консоль наступною командами:
+```properties
+npm install -g npm-check-updates
+ncu -u
+npm install
+```
+
 ### Встановлення залежностей
 ```properties
 npm install
