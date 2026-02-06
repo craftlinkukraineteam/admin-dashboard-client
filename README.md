@@ -1,4 +1,4 @@
-# Administration Panel (Client)
+# Administration Panel Frontend
 
 Невеликий фронтенд‑застосунок, створений на React.js, який відповідає за інтерфейс панелі адміністрування.  
 Застосунок взаємодіє з бекенд‑мікросервісом (Spring Boot) через REST API та використовує JWT (JSON Web Token) для аутентифікації.
@@ -23,8 +23,8 @@
 
 ### Cтруктура проєкту
 ```properties
-├── frontend/
-├──── src/
+├── public/
+├── src/
 │   ├──── app/                  # Redux store
 │   │   └── store.ts
 │   ├──── features/
@@ -43,11 +43,19 @@
 │   │   └── authGuard.tsx
 │   ├── main.tsx
 │   └── App.tsx
+├── .gitignore
+├── .prettierignore
+├── .prettierrc
+├── README.md
+├── .eslintrc.config.js
 ├── index.html
-├── vite.config.ts
+├── package-lock.json
+├── package.json
+├── tsconfig.app.json
 ├── tsconfig.json
-├── prettier.config.js
-└── .eslintrc.config.js
+├── tsconfig.node.json
+├── vite.config.ts
+└── yarn.lock
 ```
 
 ## Запуск
