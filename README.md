@@ -1,4 +1,4 @@
-# Administration Panel Frontend
+# Administration Panel (Client)
 
 Невеликий фронтенд‑застосунок, створений на React.js, який відповідає за інтерфейс панелі адміністрування.  
 Застосунок взаємодіє з бекенд‑мікросервісом (Spring Boot) через REST API та використовує JWT (JSON Web Token) для аутентифікації.
