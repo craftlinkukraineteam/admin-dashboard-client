@@ -9,7 +9,7 @@
 - React Router;
 - Vite;
 - Redux Toolkit (RTK Query);
-- Axios (для HTTP‑запитів);
+- Axios;
 - JWT (JSON Web Token);
 - Material UI;
 
