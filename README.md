@@ -57,7 +57,7 @@ npm run dev
 ```
 
 ### Встановлення залежностей
-```bash
+```properties
 npm install
 ```
 
