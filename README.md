@@ -25,21 +25,21 @@
 ```properties
 ├── public/
 ├── src/
-    ├──── app/                    # Redux store
+    ├──── app/                    
           └── store.ts
     ├──── features/
-          ├── auth/               # Авторизація та реєстрація
-          │   ├── authSlice.ts
-          │   ├── authApi.ts      # RTK Query для /login, /register
-          │   ├── LoginPage.tsx
-          │   └── RegisterPage.tsx
-          └── dashboard/          # Панель адміністратора
+          ├── auth/               
+              ├── authSlice.ts
+              ├── authApi.ts      
+              ├── LoginPage.tsx
+              └── RegisterPage.tsx
+          └── dashboard/         
               └── DashboardPage.tsx
-    ├──── components/             # Загальні компоненти
+    ├──── components/             
           └── Navbar.tsx
-    ├──── routes/                 # React Router маршрути
+    ├──── routes/                 
           └── AppRoutes.tsx
-    ├──── utils/                  # Хелпери, токен, guard
+    ├──── utils/                  
           └── authGuard.tsx
     ├── main.tsx
     └── App.tsx
